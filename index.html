@@ -9,31 +9,88 @@
 
     <hr/>
 
-    <h1>input type test</h1>
-    Ref. <a href='https://developers.google.com/web/fundamentals/design-and-ux/input/forms/?hl=ja'>最適なフォームの作成  |  Web  |  Google Developers</a>
-    <h2>&lt;input type='url'/&gt;</h2>
-    <input type='url'/>
-    <h2>&lt;input type='tel'/&gt;</h2>
-    <input type='tel'/>
-    <h2>&lt;input type='email'/&gt;</h2>
-    <input type='email'/>
-    <h2>&lt;input type='search'/&gt;</h2>
-    <input type='search'/>
-    <h2>&lt;input type='number'/&gt;</h2>
-    <input type='number'/>
-    <h2>&lt;input type='range'/&gt;</h2>
-    <input type='range'/>
-    <h2>&lt;input type='datetime-local'/&gt;</h2>
-    <input type='datetime-local'/>
-    <h2>&lt;input type='date'/&gt;</h2>
-    <input type='date'/>
-    <h2>&lt;input type='time'/&gt;</h2>
-    <input type='time'/>
-    <h2>&lt;input type='week'/&gt;</h2>
-    <input type='week'/>
-    <h2>&lt;input type='month'/&gt;</h2>
-    <input type='month'/>
-    <h2>&lt;input type='color'/&gt;</h2>
-    <input type='color'/>
+    <section id='input-type-test'>
+      <h1>input type test</h1>
+      Ref. <a href='https://developers.google.com/web/fundamentals/design-and-ux/input/forms/?hl=ja'>最適なフォームの作成  |  Web  |  Google Developers</a>
+
+      <h2>&lt;input type='text'/&gt;</h2>
+      <input type='text' v-model='text'/>
+      value=<span>{{ text | json }}</span>
+
+      <h2>&lt;input type='url'/&gt;</h2>
+      <input type='url' v-model='url'/>
+      value=<span>{{ url | json }}</span>
+
+      <h2>&lt;input type='tel'/&gt;</h2>
+      <input type='tel' v-model='tel'/>
+      value=<span>{{ tel | json }}</span>
+
+      <h2>&lt;input type='email'/&gt;</h2>
+      <input type='email' v-model='email'/>
+      value=<span>{{ email | json }}</span>
+
+      <h2>&lt;input type='search'/&gt;</h2>
+      <input type='search' v-model='search'/>
+      value=<span>{{ search | json }}</span>
+
+      <h2>&lt;input type='number'/&gt;</h2>
+      <input type='number' v-model='number'/>
+      value=<span>{{ number | json }}</span>
+
+      <h2>&lt;input type='range'/&gt;</h2>
+      <input type='range' v-model='range'/>
+      value=<span>{{ range | json }}</span>
+
+      <h2>&lt;input type='datetime-local'/&gt;</h2>
+      <input type='datetime-local' v-model='datetimelocal'/>
+      value=<span>{{ datetimelocal | json }}</span>
+
+      <h2>&lt;input type='date'/&gt;</h2>
+      <input type='date' v-model='date'/>
+      value=<span>{{ date | json }}</span>
+
+      <h2>&lt;input type='time'/&gt;</h2>
+      <input type='time' v-model='time'/>
+      value=<span>{{ time | json }}</span>
+
+      <h2>&lt;input type='week'/&gt;</h2>
+      <input type='week' v-model='week'/>
+      value=<span>{{ week | json }}</span>
+
+      <h2>&lt;input type='month'/&gt;</h2>
+      <input type='month' v-model='month'/>
+      value=<span>{{ month | json }}</span>
+
+      <h2>&lt;input type='color'/&gt;</h2>
+      <input type='color' v-model='color'/>
+      value=<span>{{ color | json }}</span>
+    </section>
   </body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js'></script>
+  <script>
+    new Vue({
+      data() {
+        return {
+          text: "",
+          url: "",
+          tel: "",
+          email: "",
+          search: "",
+          number: "",
+          range: "",
+          datetimelocal: "",
+          date: "",
+          time: "",
+          week: "",
+          month: "",
+          color: "#000000",
+        };
+      },
+      filters: {
+        json(value) {
+          return JSON.stringify(value);
+        }
+      },
+    }).$mount('#input-type-test');
+  </script>
 </html>
